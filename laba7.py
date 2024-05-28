@@ -277,7 +277,7 @@ class BallHandler:
         ball = self.__balls_will.pop(0)
         return ball
 
-    def get_queue(self):
+    def get_will(self):
         """
         Возвращает список шаров, которые будут запущены следующими
         """
@@ -735,7 +735,7 @@ while not finished:
 
         # Список следующих шаров
         count_ball = 0
-        for i in state.balls.get_queue():
+        for i in state.balls.get_will():
             text = font.render(
                 f"{str(i).split('.')[-1][:-2]}", True, COLORS[7])
             screen.blit(text, (10, 60 + (count_ball * 13)))
@@ -785,7 +785,7 @@ while not finished:
             htest = state.balls.hittest(gun_test)
             if htest is not None:
                 state.balls.remove_ball(htest)
-                state.balls.get_queue().insert(0, type(htest))
+                state.balls.get_will().insert(0, type(htest))
                 state.active_gun = gun_test
 
         # Для уничтожения целей проверяем, попал ли какой-либо шарик в цель
