@@ -545,7 +545,6 @@ class MovingTarget(Target):
         if distance <= 1:
             swap_positions(self.from_x, self.to_x, self.from_y, self.to_y)
 
-
 class FallingTarget(Target):
     """
         Цель, падающая вниз
