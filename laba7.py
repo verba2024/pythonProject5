@@ -4,6 +4,16 @@ from random import choice, randint as rnd
 import pygame
 from datetime import datetime
 
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+GRAY = (127, 127, 127)
+WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
+MAGENTA = (255, 0, 255)
+CYAN = (0, 255, 100)
+BLACK = (0, 0, 29)
+COLORS = [RED, BLUE, GRAY, WHITE, GREEN, MAGENTA, CYAN, BLACK]
+
 
 class GameSettings:
     """
@@ -19,17 +29,6 @@ class GameSettings:
     GRAVITY_Y = 9.8
     FPS = 30
     HARD = 1
-
-
-RED = (255, 0, 0)
-BLUE = (0, 0, 255)
-GRAY = (127, 127, 127)
-WHITE = (255, 255, 255)
-GREEN = (0, 255, 0)
-MAGENTA = (255, 0, 255)
-CYAN = (0, 255, 100)
-BLACK = (0, 0, 29)
-COLORS = [RED, BLUE, GRAY, WHITE, GREEN, MAGENTA, CYAN, BLACK]
 
 timepiece = 0
 # timepiece - разница времени между текущим и предыдущим кадром[c]
