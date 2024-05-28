@@ -236,7 +236,7 @@ class BallHandler:
     """
     def __init__(self):
         self.__balls = list()
-        self.__balls_queue = list()
+        self.__balls_will = list()
         self.shot_count = 0
 
     def add_ball(self, ball):
@@ -272,23 +272,23 @@ class BallHandler:
         # количество здесь
         self.shot_count += 1
 
-        if len(self.__balls_queue) <= 0:
+        if len(self.__balls_will) <= 0:
             self.refill()
-        ball = self.__balls_queue.pop(0)
+        ball = self.__balls_will.pop(0)
         return ball
 
     def get_queue(self):
         """
         Возвращает список шаров, которые будут запущены следующими
         """
-        return self.__balls_queue
+        return self.__balls_will
 
     def refill(self):
         """
         Восполняет список шаров, которые будут запущены
         """
         for i in range(15):
-            self.__balls_queue.append(
+            self.__balls_will.append(
                 choice(AVAILABLE_BALL_TYPES)
             )
 
